@@ -13,6 +13,7 @@ syntax = "proto3";
 import public "Messages.proto";
 
 package cqp.remote;
+option java_package = "com.cqp.remote";
 
 /// @brief EncryptedDataValues Holds the data and the information needed to decrypt it
 message EncryptedDataValues {

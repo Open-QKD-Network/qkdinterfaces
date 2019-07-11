@@ -13,6 +13,7 @@
 syntax = "proto3";
 
 package cqp.remote;
+option java_package = "com.cqp.remote";
 
 /// A list of contact details
 message SiteList {

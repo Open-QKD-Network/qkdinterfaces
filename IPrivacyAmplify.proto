@@ -13,6 +13,7 @@ syntax = "proto3";
 import public "google/protobuf/empty.proto";
 
 package cqp.remote;
+option java_package = "com.cqp.remote";
 
 /**
  * @brief The IPrivacyAmplify class

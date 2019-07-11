@@ -17,6 +17,7 @@ import public "google/protobuf/wrappers.proto";
 import public "Tunnels.proto";
 
 package cqp.remote.tunnels;
+option java_package = "com.cqp.remote";
 
 /**
  * @brief The ITunnelServer

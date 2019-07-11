@@ -14,6 +14,7 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
 package cqp.remote;
+option java_package = "com.cqp.remote";
 
 /// A list of statistic names which will be reported
 message ReportingFilter {

@@ -17,7 +17,7 @@ import public "Keys.proto";
 import public "Messages.proto";
 
 package cqp.remote;
-
+option java_package = "com.cqp.remote";
 /**
  * @brief IKeyFactory Interface
  * Interface for Key facotries to build keys

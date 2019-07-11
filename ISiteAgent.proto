@@ -18,6 +18,7 @@ import public "Device.proto";
 
 
 package cqp.remote;
+option java_package = "com.cqp.remote";
 
 /**
  * @brief ISiteAgent Interface

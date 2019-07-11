@@ -15,6 +15,7 @@ import public "Reporting.proto";
 import public "Site.proto";
 
 package cqp.remote;
+option java_package = "com.cqp.remote";
 
 /**
  * @brief Communitcate with the network manager which will decide the topology of the QKD network

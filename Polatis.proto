@@ -14,6 +14,7 @@ syntax = "proto3";
 import public "google/protobuf/empty.proto";
 
 package polatis;
+option java_package = "com.cqp.remote";
 
 /// How many fibres are required in the connection
 enum Direction {

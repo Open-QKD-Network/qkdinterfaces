@@ -15,6 +15,7 @@ import public "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 
 package cqp.remote;
+option java_package = "com.cqp.remote";
 
 /**
  * @brief The ISift class

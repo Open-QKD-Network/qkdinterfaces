@@ -13,6 +13,7 @@
 syntax = "proto3";
 
 package cqp.remote;
+option java_package = "com.cqp.remote";
 
 /// Value of a qubit
 message BB84 {
