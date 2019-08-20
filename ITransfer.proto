@@ -28,13 +28,6 @@ service ITransfer {
      * @param writer
      * @return status
      */
-    rpc TransferBi(stream EncryptedDataValues) returns (stream EncryptedDataValues);
+    rpc Transfer(stream EncryptedDataValues) returns (stream EncryptedDataValues);
 
-    /**
-     * @brief Transfer
-     * Send encrypted data to/from a server
-     * @param reader
-     * @return status
-     */
-    rpc Transfer(stream EncryptedDataValues) returns (google.protobuf.Empty);
 }
