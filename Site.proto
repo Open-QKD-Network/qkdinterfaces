@@ -136,4 +136,9 @@ message SiteAgentConfig
     repeated PhysicalPath staticHops = 12;
     /// A key for bootstrapping the system
     bytes fallbackKey = 13;
+    oneof limitCache
+    {
+        /// How many keys to keep in memory before moving them to the backing store
+        uint32 keyStoreCache = 14;
+    }
 }
