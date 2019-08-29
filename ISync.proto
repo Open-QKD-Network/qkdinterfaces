@@ -1,0 +1,27 @@
+/*!
+* @file
+* @brief ISync
+*
+* @copyright Copyright (C) University of Bristol 2019
+*    This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+*    If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+*    See LICENSE file for details.
+* @date 29/08/2019
+* @author Richard Collins <richard.collins@bristol.ac.uk>
+*/
+
+syntax = "proto3";
+import public "google/protobuf/empty.proto";
+
+package cqp.remote;
+option java_package = "com.cqp.remote";
+
+message IdList {
+    repeated bytes id = 1;
+};
+
+/// Syncronise key publishing
+service ISync {
+    /// instructs the server to release the specified keys in the order given
+    rpc ReleaseKeys(IdList) returns (google.protobuf.Empty);
+};
