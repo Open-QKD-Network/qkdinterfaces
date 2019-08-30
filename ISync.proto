@@ -24,4 +24,6 @@ message IdList {
 service ISync {
     /// instructs the server to release the specified keys in the order given
     rpc ReleaseKeys(IdList) returns (google.protobuf.Empty);
+
+    rpc SendInitialKey(google.protobuf.Empty) returns (google.protobuf.Empty);
 };
