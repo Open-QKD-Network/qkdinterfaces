@@ -1,0 +1,26 @@
+/*!
+* @file
+* @brief HandheldConfig
+*
+* @copyright Copyright (C) University of Bristol 2019
+*    This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+*    If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+*    See LICENSE file for details.
+* @date 18/04/2019
+* @author Richard Collins <richard.collins@bristol.ac.uk>
+*/
+
+syntax = "proto3";
+import "Device.proto";
+import "Site.proto";
+
+package cqp.remote;
+option java_package = "com.cqp.remote";
+
+/// Alice handheld config
+message QNetClientConfig {
+    SiteAgentConfig siteConfig = 1;
+    /// how to connect to the time tag reader
+    string timeTaggerAddress = 2;
+    repeated uint32 channels = 3;
+}
