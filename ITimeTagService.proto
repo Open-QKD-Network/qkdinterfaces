@@ -16,7 +16,7 @@ package cqp.remote;
 option java_package = "com.cqp.remote";
 
 message Channels {
-    repeated int32 channels = 1;
+    repeated uint32 channels = 1;
 }
 
 message TimeTag {
