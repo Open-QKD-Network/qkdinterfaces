@@ -12,6 +12,8 @@
 
 syntax = "proto3";
 
+import public "google/protobuf/empty.proto";
+
 package cqp.remote;
 option java_package = "com.cqp.remote";
 
@@ -32,4 +34,12 @@ message TimeTagList {
 
 service ITimeTagService {
     rpc ReadTimeTags(Channels) returns (stream TimeTagList);
+}
+
+message TimePoints {
+    repeated uint64 timePointPs = 1;
+}
+
+service IEntaglementEvent {
+    rpc ReadEntaglementEvents(google.protobuf.Empty) returns (stream TimePoints);
 }
