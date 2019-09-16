@@ -34,5 +34,5 @@ service IErrorCorrect {
 * Example data for errorcorrection
 */
 message ErrorCorrectParities {
-    // TBD
+    bytes parity = 1;
 }
