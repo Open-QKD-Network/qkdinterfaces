@@ -23,4 +23,9 @@ message QNetClientConfig {
     /// how to connect to the time tag reader
     string timeTaggerAddress = 2;
     repeated uint32 channels = 3;
+    /// which switch is this client connected to,
+    /// this will be passed to the controller so it can route the connections
+    string sdnSwitchName = 4;
+    /// The ports on the switch each channel is connected to.
+    repeated string sdnSwitchPorts = 5;
 }
