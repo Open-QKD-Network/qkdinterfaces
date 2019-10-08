@@ -21,6 +21,10 @@ option java_package = "com.cqp.remote";
  */
 service IErrorCorrect {
 
+    rpc SelectCorrectionScheme(CorrectionSchemeId) returns (google.protobuf.Empty);
+
+    rpc GetCorrectionScheme(CorrectionSchemeId) returns (CorrectionScheme);
+
     /**
      * @brief AlignmentData
      * called by alignment classes to share data
@@ -28,6 +32,19 @@ service IErrorCorrect {
      * @return status
      */
     rpc NotifyDataParity(ErrorCorrectParities) returns (google.protobuf.Empty);
+}
+
+message CorrectionSchemeId {
+    string id = 1;
+}
+
+message ParityMatrix {
+    repeated bool col = 1;
+}
+
+message CorrectionScheme {
+    string id = 1;
+    repeated ParityMatrix rows = 2;
 }
 
 /**
