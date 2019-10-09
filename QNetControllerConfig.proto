@@ -1,0 +1,51 @@
+/*!
+* @file
+* @brief DummyQKDConfig
+*
+* @copyright Copyright (C) University of Bristol 2019
+*    This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+*    If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
+*    See LICENSE file for details.
+* @date 18/04/2019
+* @author Richard Collins <richard.collins@bristol.ac.uk>
+*/
+
+syntax = "proto3";
+import "Site.proto";
+package cqp.config;
+
+message WavePlate {
+    string address = 1;
+    double calibrationOffset = 2;
+}
+
+message FlipMirror {
+    string address = 1;
+}
+
+message Laser {
+    string address = 1;
+    double initalPower = 2;
+    double minPower = 3;
+    double maxPort = 4;
+}
+
+message PolarisationController {
+    string address = 1;
+
+}
+
+/// Alice handheld config
+message QNetController {
+
+    string listenAddress = 1;
+    /// Static links to create on startup
+    repeated remote.PhysicalPath staticHops = 2;
+    map<string /*switch name*/, string /*address*/> sdnSwitches = 3;
+
+    WavePlate waveplate = 4;
+    FlipMirror flipMirror = 5;
+    Laser pumpLaser = 6;
+    Laser alignmentLaser = 7;
+    repeated PolarisationController polarControllers = 8;
+}
