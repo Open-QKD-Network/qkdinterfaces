@@ -55,7 +55,7 @@ message DeviceConfig {
     /// e.g: openflow:1234
     string switchName = 3;
     /// The physical port the device is connected to
-    string switchPort = 4;
+    repeated string switchPort = 4;
     /// What kind of device is it
     string kind = 5;
     /// Number of bytes the key is split into before publishing
