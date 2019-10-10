@@ -11,7 +11,6 @@
 */
 
 syntax = "proto3";
-import "Site.proto";
 package cqp.config;
 
 message WavePlate {
@@ -25,27 +24,47 @@ message FlipMirror {
 
 message Laser {
     string address = 1;
-    double initalPower = 2;
+    double initialPower = 2;
     double minPower = 3;
-    double maxPort = 4;
+    double maxPower = 4;
 }
 
 message PolarisationController {
     string address = 1;
 
+    /// which polatis switch is this connected to
+    string switchName = 2;
+    /// The polatis port the input is connected to
+    string inputPort = 3;
+    /// The polatis port the output is connected to
+    string outputPort = 4;
+}
+
+/**
+ * This represents the output from the demultiplexer, the output of the "source"
+ */
+message EntaglementSource {
+
+    message Port {
+        repeated string ports = 1;
+        repeated string clients = 2;
+    }
+
+    /// which polatis switch is this connected to
+    string switchName = 1;
+    map<uint32, Port> waveLengths = 2;
 }
 
 /// Alice handheld config
 message QNetController {
 
     string listenAddress = 1;
-    /// Static links to create on startup
-    repeated remote.PhysicalPath staticHops = 2;
     map<string /*switch name*/, string /*address*/> sdnSwitches = 3;
 
-    WavePlate waveplate = 4;
+    WavePlate wavePlate = 4;
     FlipMirror flipMirror = 5;
     Laser pumpLaser = 6;
     Laser alignmentLaser = 7;
     repeated PolarisationController polarControllers = 8;
+    EntaglementSource source = 9;
 }
