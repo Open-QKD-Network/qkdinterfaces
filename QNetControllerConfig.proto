@@ -45,14 +45,12 @@ message PolarisationController {
  */
 message EntaglementSource {
 
-    message Port {
-        repeated string ports = 1;
-        repeated string clients = 2;
+    message Ports {
+        map<string /* port id */, string /*client*/> ports = 1;
     }
-
     /// which polatis switch is this connected to
     string switchName = 1;
-    map<uint32, Port> waveLengths = 2;
+    map<uint32 /* wavelength picoseconds */, Ports> waveLengths = 2;
 }
 
 /// Alice handheld config
