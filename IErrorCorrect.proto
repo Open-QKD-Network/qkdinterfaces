@@ -52,4 +52,5 @@ message CorrectionScheme {
 */
 message ErrorCorrectParities {
     bytes parity = 1;
+    bytes hash = 2;
 }
