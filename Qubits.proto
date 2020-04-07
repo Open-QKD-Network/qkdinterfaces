@@ -62,13 +62,14 @@ message BasisList {
 /// a list of basis indexed by frame id
 message BasisBySiftFrame {
     /// values
-    map<uint64 /* SequenceNumber */, BasisList> Basis = 1;
+    map<uint64 /* SequenceNumber */, BasisList> basis = 1;
 }
 
 /// a list of booleans indicating whether the basis match
 message BasisAnswers {
     /// values
     repeated bool answers = 1;
+    repeated uint32 intensity = 2;
 }
 
 /// a list of answers indexed by frame id
