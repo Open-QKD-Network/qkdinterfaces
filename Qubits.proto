@@ -53,10 +53,14 @@ message Basis {
     }
 }
 
+message IndexedBasis {
+    uint64 index = 1;
+    Basis.Type basis = 2;
+}
 /// a list of basis
 message BasisList {
     /// value
-    repeated Basis.Type basis = 1;
+    repeated IndexedBasis indexedBasis = 1;
 }
 
 /// a list of basis indexed by frame id
