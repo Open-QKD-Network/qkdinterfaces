@@ -8,6 +8,7 @@ option java_package = "com.cqp.remote";
 message Key {
     bytes key =  1;
     uint64 seqID = 2;
+    string localID = 3;
 }
 
 message Empty {}
